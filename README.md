@@ -49,7 +49,7 @@ extract it, how reliable it is, and how to turn it into something useful**.
 <td width="42%" align="center" valign="middle">
 
 <img
-  src="./assets/agent.gif"
+  src="./assets/agent(1).gif"
   width="330"
   alt="Decorative autonomous agent animation"
 />
