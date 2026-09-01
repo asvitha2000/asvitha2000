@@ -1,0 +1,710 @@
+/* =====================================
+   BASIC RESET
+===================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #ffffff;
+  color: #151515;
+
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.navbar {
+  max-width: 1180px;
+
+  margin: auto;
+
+  padding: 28px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  text-decoration: none;
+
+  font-size: 19px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+
+  font-size: 14px;
+
+  color: #555;
+}
+
+.nav-links a:hover {
+  color: #111;
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+  max-width: 1180px;
+
+  margin: auto;
+
+  min-height: 650px;
+
+  padding: 70px 30px 100px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(350px, 0.9fr);
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.section-label {
+  margin: 0 0 18px;
+
+  font-family: monospace;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  color: #777;
+}
+
+.hero h1 {
+  max-width: 680px;
+
+  margin: 0 0 26px;
+
+  font-size: clamp(42px, 5vw, 67px);
+
+  line-height: 1.04;
+
+  letter-spacing: -3px;
+
+  font-weight: 650;
+}
+
+.hero h1 span {
+  color: #777;
+}
+
+.hero-description {
+  max-width: 600px;
+
+  margin: 0 0 13px;
+
+  font-size: 17px;
+
+  color: #555;
+}
+
+.hero-buttons {
+  margin-top: 32px;
+
+  display: flex;
+  gap: 12px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 10px 18px;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.primary-button {
+  background: #151515;
+  color: white;
+}
+
+.secondary-button {
+  border: 1px solid #ddd;
+  background: white;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =====================================
+   AGENT ILLUSTRATION
+===================================== */
+
+.agent-area {
+  text-align: center;
+}
+
+.agent-world {
+  position: relative;
+
+  width: 100%;
+  max-width: 500px;
+
+  aspect-ratio: 500 / 430;
+
+  margin: auto;
+}
+
+
+/* network background */
+
+.agent-network {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.agent-network line {
+  stroke: #e2e2e2;
+
+  stroke-width: 1;
+
+  stroke-dasharray: 5 8;
+}
+
+
+/* spectator nodes */
+
+.network-node {
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  border: 2px solid #999;
+
+  background: white;
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  transition:
+    transform 250ms ease,
+    background 250ms ease;
+}
+
+.node-1 {
+  left: 16%;
+  top: 23%;
+}
+
+.node-2 {
+  left: 50%;
+  top: 14%;
+}
+
+.node-3 {
+  left: 84%;
+  top: 30%;
+}
+
+.node-4 {
+  left: 66%;
+  top: 81%;
+}
+
+.node-5 {
+  left: 26%;
+  top: 70%;
+}
+
+
+/* moving agent */
+
+.agent {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 58px;
+  height: 58px;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 10;
+
+  transition:
+    left 1.5s cubic-bezier(.45, 0, .2, 1),
+    top 1.5s cubic-bezier(.45, 0, .2, 1);
+}
+
+
+/* subtle ring */
+
+.agent::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -9px;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 50%;
+
+  animation:
+    agent-ring 2.6s ease-in-out infinite;
+}
+
+
+/* actual icon */
+
+.agent-core {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #ccc;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  font-size: 22px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.08);
+
+  animation:
+    agent-float 2.4s ease-in-out infinite;
+}
+
+
+@keyframes agent-ring {
+
+  0%,
+  100% {
+    transform: scale(0.95);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 0.75;
+  }
+
+}
+
+
+@keyframes agent-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+}
+
+
+/* decorative floating particles */
+
+.particle {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #aaa;
+
+  opacity: 0.5;
+
+  animation:
+    particleFloat 5s ease-in-out infinite;
+}
+
+.particle-1 {
+  left: 37%;
+  top: 20%;
+}
+
+.particle-2 {
+  left: 76%;
+  top: 60%;
+
+  animation-delay: -2s;
+}
+
+.particle-3 {
+  left: 18%;
+  top: 53%;
+
+  animation-delay: -3s;
+}
+
+@keyframes particleFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+}
+
+
+.agent-caption {
+  margin-top: 8px;
+
+  font-family: monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  color: #999;
+}
+
+
+/* =====================================
+   GENERAL SECTIONS
+===================================== */
+
+.section {
+  max-width: 1120px;
+
+  margin: auto;
+
+  padding: 90px 30px;
+
+  border-top: 1px solid #e5e5e5;
+}
+
+.section h2 {
+  margin: 0 0 35px;
+
+  font-size: 35px;
+
+  letter-spacing: -1.5px;
+}
+
+
+/* =====================================
+   PROJECTS
+===================================== */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.project {
+  padding: 28px;
+
+  border: 1px solid #e2e2e2;
+
+  border-radius: 8px;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+
+  border-color: #aaa;
+}
+
+.project-number {
+  font-family: monospace;
+
+  font-size: 11px;
+
+  color: #999;
+}
+
+.project h3 {
+  margin: 28px 0 10px;
+
+  font-size: 21px;
+}
+
+.project p {
+  color: #666;
+
+  font-size: 14px;
+}
+
+.project a {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  font-size: 13px;
+
+  text-decoration: none;
+}
+
+
+/* =====================================
+   TOOLS
+===================================== */
+
+.tools-intro {
+  margin-top: -25px;
+  margin-bottom: 25px;
+
+  color: #777;
+}
+
+.tool-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-bottom: 30px;
+}
+
+.tool-button {
+  min-height: 42px;
+
+  padding: 9px 15px;
+
+  border: 1px solid #d9d9d9;
+
+  background: white;
+
+  border-radius: 4px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.tool-button:hover {
+  transform: translateY(-2px);
+}
+
+.tool-button.active {
+  background: #151515;
+
+  color: white;
+
+  border-color: #151515;
+}
+
+
+/* description panel */
+
+.tool-detail {
+  min-height: 170px;
+
+  padding: 30px 0 5px;
+
+  border-top: 1px solid #e5e5e5;
+}
+
+.tool-detail-number {
+  margin-bottom: 8px;
+
+  font-family: monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  color: #999;
+}
+
+.tool-detail h3 {
+  margin: 0 0 8px;
+
+  font-size: 26px;
+}
+
+.tool-detail p {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-size: 16px;
+
+  color: #555;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================
+   CONTACT
+===================================== */
+
+.contact {
+  padding-bottom: 140px;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 850px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding-top: 55px;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .agent-world {
+    max-width: 420px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .navbar {
+    padding: 22px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 45px 22px 75px;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 65px 22px;
+  }
+
+  .agent {
+    width: 47px;
+    height: 47px;
+  }
+
+}
+
+
+/* Respect accessibility preference */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+}
