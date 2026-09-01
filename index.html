@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Asvitha | Portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =====================================
+       NAVBAR
+  ====================================== -->
+
+  <nav class="navbar">
+
+    <a href="#" class="logo">
+      AS.
+    </a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </nav>
+
+
+  <!-- =====================================
+       ABOUT / HERO
+  ====================================== -->
+
+  <main>
+
+    <section class="hero" id="about">
+
+      <!-- LEFT SIDE -->
+
+      <div class="hero-text">
+
+        <p class="section-label">
+          ABOUT ME
+        </p>
+
+        <h1>
+          I like building systems that turn
+          <span>complex information into useful decisions.</span>
+        </h1>
+
+        <p class="hero-description">
+          My interests sit at the intersection of machine learning,
+          quantitative research, data science, and AI.
+        </p>
+
+        <p class="hero-description">
+          I enjoy working with complex and unstructured data,
+          experimenting with models, and turning research ideas into
+          practical systems.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#projects" class="primary-button">
+            View Projects
+          </a>
+
+          <a
+            href="https://github.com/YOUR-USERNAME"
+            target="_blank"
+            class="secondary-button"
+          >
+            GitHub ↗
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT SIDE:
+           DECORATIVE AGENT ANIMATION -->
+
+      <div class="agent-area">
+
+        <div class="agent-world" id="agentWorld">
+
+          <!-- decorative paths -->
+
+          <svg
+            class="agent-network"
+            viewBox="0 0 500 430"
+            aria-hidden="true"
+          >
+
+            <line x1="80" y1="100" x2="250" y2="60" />
+            <line x1="250" y1="60" x2="420" y2="130" />
+
+            <line x1="80" y1="100" x2="130" y2="300" />
+            <line x1="130" y1="300" x2="330" y2="350" />
+
+            <line x1="330" y1="350" x2="420" y2="130" />
+            <line x1="250" y1="60" x2="330" y2="350" />
+
+            <line x1="80" y1="100" x2="420" y2="130" />
+
+          </svg>
+
+
+          <!-- spectator nodes -->
+
+          <div class="network-node node-1"></div>
+          <div class="network-node node-2"></div>
+          <div class="network-node node-3"></div>
+          <div class="network-node node-4"></div>
+          <div class="network-node node-5"></div>
+
+
+          <!-- moving agent -->
+
+          <div id="agent" class="agent">
+
+            <div class="agent-core">
+              ✦
+            </div>
+
+          </div>
+
+
+          <!-- ambient particles -->
+
+          <div class="particle particle-1"></div>
+          <div class="particle particle-2"></div>
+          <div class="particle particle-3"></div>
+
+        </div>
+
+        <p class="agent-caption">
+          always exploring.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         PROJECTS
+    ====================================== -->
+
+    <section class="section" id="projects">
+
+      <p class="section-label">
+        SELECTED WORK
+      </p>
+
+      <h2>
+        Projects
+      </h2>
+
+      <div class="projects-grid">
+
+        <article class="project">
+
+          <span class="project-number">
+            01
+          </span>
+
+          <h3>
+            Alternative Data Research
+          </h3>
+
+          <p>
+            Research and engineering around extracting structured
+            signals from large volumes of unstructured information.
+          </p>
+
+          <a href="#">
+            View project →
+          </a>
+
+        </article>
+
+
+        <article class="project">
+
+          <span class="project-number">
+            02
+          </span>
+
+          <h3>
+            Machine Learning Research
+          </h3>
+
+          <p>
+            Experiments involving statistical modeling, machine
+            learning, evaluation, and data-driven decision systems.
+          </p>
+
+          <a href="#">
+            View project →
+          </a>
+
+        </article>
+
+
+        <article class="project">
+
+          <span class="project-number">
+            03
+          </span>
+
+          <h3>
+            Quantitative Modeling
+          </h3>
+
+          <p>
+            Research involving quantitative methods, risk,
+            simulation, and financial data.
+          </p>
+
+          <a href="#">
+            View project →
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         TOOLS
+    ====================================== -->
+
+    <section class="section" id="tools">
+
+      <p class="section-label">
+        TECHNICAL TOOLKIT
+      </p>
+
+      <h2>
+        Tools I work with
+      </h2>
+
+      <p class="tools-intro">
+        Select a tool to see how I use it.
+      </p>
+
+
+      <!-- TOOL BUTTONS -->
+
+      <div class="tool-buttons">
+
+        <button
+          class="tool-button active"
+          data-tool="python"
+        >
+          Python
+        </button>
+
+        <button
+          class="tool-button"
+          data-tool="pytorch"
+        >
+          PyTorch
+        </button>
+
+        <button
+          class="tool-button"
+          data-tool="sql"
+        >
+          SQL
+        </button>
+
+        <button
+          class="tool-button"
+          data-tool="aws"
+        >
+          AWS
+        </button>
+
+        <button
+          class="tool-button"
+          data-tool="kafka"
+        >
+          Kafka
+        </button>
+
+        <button
+          class="tool-button"
+          data-tool="docker"
+        >
+          Docker
+        </button>
+
+        <button
+          class="tool-button"
+          data-tool="mlflow"
+        >
+          MLflow
+        </button>
+
+        <button
+          class="tool-button"
+          data-tool="huggingface"
+        >
+          Hugging Face
+        </button>
+
+      </div>
+
+
+      <!-- TOOL DESCRIPTION -->
+
+      <div class="tool-detail">
+
+        <div class="tool-detail-number">
+          TOOL / 01
+        </div>
+
+        <h3 id="toolName">
+          Python
+        </h3>
+
+        <p id="toolDescription">
+          My primary language for machine learning,
+          quantitative analysis, experimentation, automation,
+          and data-processing pipelines.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         CONTACT
+    ====================================== -->
+
+    <section class="section contact" id="contact">
+
+      <p class="section-label">
+        CONTACT
+      </p>
+
+      <h2>
+        Let's connect.
+      </h2>
+
+      <p>
+        GitHub · LinkedIn · Email
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
