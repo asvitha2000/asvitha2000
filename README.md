@@ -1,7 +1,7 @@
 # Hi, I'm Asvitha 👋
 
 <p align="center">
-  <img src="./agent(1).gif" width="430" alt="Animated agent">
+  <img src="assets/agent(1).gif" width="430" alt="Animated agent">
 </p>
 
 I work across machine learning, quantitative research, and data systems, with a focus on turning complex and unstructured information into useful signals. My interests span statistical modeling, alternative data, NLP, model evaluation, and scalable workflows. I enjoy building practical systems where research, engineering, and decision-making meet for real research problems.
